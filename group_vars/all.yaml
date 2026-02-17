@@ -14,15 +14,15 @@ cart: cart-dev.mreddy.online
 mysql: mysql-dev.mreddy.online
 
 
-# [shipping]
-# shipping-dev.mreddy.online
+shipping: shipping-dev.mreddy.online
+
 
 
 rabbitmq: rabbitmq-dev.mreddy.online
 
 
-# [payment]
-# payment-dev.mreddy.online
+payment: payment-dev.mreddy.online
+
 
 # [frontend]
 # frontend-dev.mreddy.online
