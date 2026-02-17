@@ -1,6 +1,5 @@
 
-  tasks:
-    - name: intsall my sql
+    - name: intsall mysql
       ansible.builtin.package:
         name: mysql-server
         state: present
