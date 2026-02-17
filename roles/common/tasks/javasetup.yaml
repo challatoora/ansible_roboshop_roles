@@ -1,6 +1,6 @@
-- name: installing nodejs 
+- name: installing maven 
   ansible.builtin.package:
-    name: nodejs
+    name: maven
     state: present
 
 - name: installing mysql
