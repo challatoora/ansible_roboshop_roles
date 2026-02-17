@@ -18,8 +18,8 @@ mysql: mysql-dev.mreddy.online
 # shipping-dev.mreddy.online
 
 
-# [rabbitmq]
-# rabbitmq-dev.mreddy.online
+rabbitmq: rabbitmq-dev.mreddy.online
+
 
 # [payment]
 # payment-dev.mreddy.online
