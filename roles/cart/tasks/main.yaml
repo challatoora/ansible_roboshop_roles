@@ -6,12 +6,12 @@
 - name: nodejs setup
   ansible.builtin.import_role:
     name: common 
-    tasks_from: nodejs.setup.yaml
+    tasks_from: nodejs.yaml
 
 - name: sysytemd setup
   ansible.builtin.import_role:
     name: common 
-    tasks_from: systemd-setup.yaml
+    tasks_from: systemd.yaml
 
 
 
