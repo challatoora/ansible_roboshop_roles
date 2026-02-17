@@ -5,7 +5,7 @@
 
 - name: installing mysql
   ansible.builtin.package:
-    name: mysqld
+    name: mysql
     state: present
 
 -   name: install dependencies
