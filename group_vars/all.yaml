@@ -11,8 +11,8 @@ user: user-dev.mreddy.online
 cart: cart-dev.mreddy.online
 
 
-# [mysql]
-# mysql-dev.mreddy.online
+mysql: mysql-dev.mreddy.online
+
 
 # [shipping]
 # shipping-dev.mreddy.online
