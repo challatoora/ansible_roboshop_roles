@@ -1,0 +1,3 @@
+- name: hello word
+  debug:
+    msg: "Hi from demo"
