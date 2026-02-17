@@ -1,0 +1,67 @@
+- name: creating instance 
+  hosts: all
+  connection: local
+  #become: yes
+  vars:
+    env: dev
+    ami: ami-0220d79f3f480ecf5
+    security: sg-07a628098640c0e6c
+    instancetype: t3.micro
+    domain_name: mreddy.online
+  
+    instances:
+    - mongodb
+    - catalogue
+    - frontend
+    - redis
+    - user
+    - cart 
+    - mysql
+    - payment
+    - shipping
+    - rabbitmq
+
+  tasks:
+  - name : instance creating
+    amazon.aws.ec2_instance:
+      image_id: "{{ ami }}"
+      security_group: "{{ security }}"
+      instance_type: "{{ instancetype }}"
+      region: us-east-1
+      name: "{{ item }}-{{ env }}"
+      tags:
+        Proj: roboshop
+        comp: "{{ item }}"
+        Name: "{{ item }}-{{ env }}"
+    loop: "{{ instances }}"
+    register: output
+
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "{{ output }}"
+
+  - name: adding route53
+    amazon.aws.route53:
+      state: present
+      zone: "{{ domain_name }}"
+      record: "{{ item.item }}-{{ env }}.{{ domain_name }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+    loop: "{{ output.results }}"
+
+  - name: adding route53 public
+    amazon.aws.route53:
+      state: present
+      zone: "{{ domain_name }}"
+      record: "roboshop-{{ env }}.{{ domain_name }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].public_ip_address }}"
+      wait: true
+    loop: "{{ output.results }}"
+    when: item.item == "frontend"
+  
+
+
