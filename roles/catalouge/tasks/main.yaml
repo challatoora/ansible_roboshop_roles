@@ -1,0 +1,4 @@
+- name: importing the app set up
+  ansible.builtin.import_role:
+    - name: common 
+      taskf_from: appsetup.yaml
