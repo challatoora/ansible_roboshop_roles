@@ -13,8 +13,6 @@
     name: common 
     tasks_from: systemd.yaml
 
-
-
 - name:  start user
   ansible.builtin.service:
     name: user
