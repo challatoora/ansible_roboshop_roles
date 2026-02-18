@@ -15,7 +15,7 @@
     tasks_from: systemd.yaml
 
 
-- name: restart python
+- name: restart payment
   ansible.builtin.service:
   name: payment
   state: restarted
