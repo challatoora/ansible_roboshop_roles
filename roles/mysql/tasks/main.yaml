@@ -1,6 +1,6 @@
 
     - name: intsall mysql
-      ansible.builtin.package:
+      ansible.builtin.dnf:
         name: mysql-server
         state: present
 
