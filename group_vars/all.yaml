@@ -10,3 +10,4 @@ shipping: shipping-dev.mreddy.online
 rabbitmq: rabbitmq-dev.mreddy.online
 payment: payment-dev.mreddy.online
 frontend: frontend-dev.mreddy.online
+catalogue: catalogue-dev.mreddy.online
