@@ -1,5 +1,5 @@
-name: "import vs include"
-hosts: local
-connection: local
-roles:
-- inclde-import
+- name: "import vs include"
+  hosts: local
+  connection: local
+  roles:
+  - inclde-import
