@@ -11,3 +11,6 @@ filters:
   tag:Name: shell
 compose:
   ansible_host: private_ip_address
+keyed_groups:
+- separator: ''
+  keys: tag.Name
