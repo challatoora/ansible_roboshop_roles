@@ -9,3 +9,5 @@ hostnames:
 filters:
   instance-state-name : running
   tag:Name: shell
+compose:
+  ansible_host: private_ip_address
